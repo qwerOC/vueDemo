@@ -72,7 +72,9 @@ export default {
       this.redex_url = UrlManager.codeImg + "?imgCodeKey=" + this.time;
     },
     click_login() {
-  
+      this.$router.push({
+        path:'/HomeMain'
+      });
       var params = {
         email: this.email,
         imgCode: this.imgCode,
@@ -81,12 +83,12 @@ export default {
       };
       PublicSever.postLoginRequest(params)
         .then(res => {
-          if(res){
-          alert(res);
+          if (res) {
+            alert(res);
           }
         })
         .catch(err => {
-          alert('错误'+err);
+          alert("错误" + err);
         });
     }
   }
@@ -199,8 +201,7 @@ export default {
   width: 35%;
   height: 30px;
   margin-top: 3px;
-     cursor: pointer;
-
+  cursor: pointer;
 }
 .login_btn {
   background: #00c1e0;
