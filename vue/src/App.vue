@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-   <div class="login_header">
+    <div class="login_header">
       <div class="header_contain">
         <img
           src="https://upload-images.jianshu.io/upload_images/1416859-7c9aeec44ea0578f.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/300/h/240/format/webp"
@@ -9,20 +9,22 @@
         <h3 class="header_title">Shopshops哪逛管理后台</h3>
         <h6 class="header_abouttitle">关于我们</h6>
       </div>
+      <div class="contain">
+        <router-view />
+      </div>
     </div>
-    <router-view/>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
-}
+  name: "App"
+};
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -30,9 +32,9 @@ export default {
   margin-top: 0px;
   position: relative;
 }
-*{
-  margin:0;
-  padding:0;
+* {
+  margin: 0;
+  padding: 0;
 }
 .login_header {
   margin: 0 auto;
@@ -78,5 +80,11 @@ export default {
   font-weight: normal;
   color: gray;
   font-size: 14px;
+}
+.contain {
+  margin-top: 75px;
+  position: absolute;
+  width: 100%;
+  height: calc(100vh - 74px);
 }
 </style>
