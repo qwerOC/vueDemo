@@ -31,6 +31,7 @@ export default {
   color: #2c3e50;
   margin-top: 0px;
   position: relative;
+
 }
 * {
   margin: 0;
@@ -83,8 +84,10 @@ export default {
 }
 .contain {
   margin-top: 75px;
-  position: absolute;
   width: 100%;
   height: calc(100vh - 74px);
+  position: absolute;
+  overflow: auto;
+
 }
 </style>

@@ -6,9 +6,39 @@
           <p class="menmulist_title">{{item.permissionName}}</p>
         </li>
       </ul>
+       <ul>
+        <li class="left_menmu" v-for="item in result" :key="item">
+          <p class="menmulist_title">{{item.permissionName}}</p>
+        </li>
+      </ul>
+       <ul>
+        <li class="left_menmu" v-for="item in result" :key="item">
+          <p class="menmulist_title">{{item.permissionName}}</p>
+        </li>
+      </ul>
+       <ul>
+        <li class="left_menmu" v-for="item in result" :key="item">
+          <p class="menmulist_title">{{item.permissionName}}</p>
+        </li>
+      </ul>
     </div>
 
     <div class="main_right">
+      <ul>
+        <li class="left_menmu" v-for="item in result" :key="item">
+          <p class="menmulist_title">{{item.permissionName}}</p>
+        </li>
+      </ul>
+      <ul>
+        <li class="left_menmu" v-for="item in result" :key="item">
+          <p class="menmulist_title">{{item.permissionName}}</p>
+        </li>
+      </ul>
+      <ul>
+        <li class="left_menmu" v-for="item in result" :key="item">
+          <p class="menmulist_title">{{item.permissionName}}</p>
+        </li>
+      </ul>
       <ul>
         <li class="left_menmu" v-for="item in result" :key="item">
           <p class="menmulist_title">{{item.permissionName}}</p>
