@@ -2,17 +2,18 @@
   <div class="main_contain">
     <!-- 左边工具栏 -->
     <div class="main_left">
-      <div v-for="item in result" :key="item" class="left_menmu">
-        <p class="menmulist_title">{{item.permissionName}}</p>
-        <img src="../assets/arrow_down.png" alt class="menmulist_img" />
-        <!-- <div class="sss">
+      <div v-for="item in result" :key="item">
+        <div class="left_menmu">
+          <p class="menmulist_title">{{item.permissionName}}</p>
+          <img src="../assets/arrow_down.png" alt class="menmulist_img" />
+        </div>
+        <div class="left_submenmu">
           <ul>
             <li class="left_menmu" v-for="itemChild in item.subMenuList" :key="itemChild">
               <p class="menmulist_title">{{itemChild.permissionName}}</p>
-              <img src="../assets/arrow_down.png" alt class="menmulist_img" />
             </li>
           </ul>
-        </div>-->
+        </div>
       </div>
     </div>
     <!-- 右边内容区域 -->
@@ -24,6 +25,7 @@ export default {
   name: "HomeMain",
   data() {
     return {
+      menmu_status: [],
       result: [
         {
           id: "5d522a4a03123058e23ae9d6",
@@ -340,6 +342,11 @@ export default {
         }
       ]
     };
+  },
+  created() {
+    for (let index = 0; index < this.result.length; index++) {
+       this.menmu_status.push(0); 
+    }
   }
 };
 </script>
@@ -363,18 +370,19 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 38px;
+  height: 56px;
   padding: 0px 20px 0px 20px;
   border-width: 0px;
   cursor: pointer;
 }
 .menmulist_title {
   font-size: 14px;
-  line-height: 38px;
+  line-height: 56px;
   text-align: center;
 }
+
 .menmulist_img {
-  padding-top: 11.5px;
+  padding-top: 20.5px;
   width: 15px;
   height: 15px;
 }
@@ -383,8 +391,5 @@ export default {
   background-color: #ffffff;
   height: calc(100vh - 74px);
   overflow: auto;
-}
-.sss {
-  height: 0px;
 }
 </style>
