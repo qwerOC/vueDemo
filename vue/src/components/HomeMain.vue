@@ -2,12 +2,12 @@
   <div class="main_contain">
     <!-- 左边工具栏 -->
     <div class="main_left">
-      <div v-for="item in result" :key="item">
-        <div class="left_menmu">
+      <div v-for="(item,index) in result" :key="item">
+        <div class="left_menmu" @click="clickmenmu(index)">
           <p class="menmulist_title">{{item.permissionName}}</p>
           <img src="../assets/arrow_down.png" alt class="menmulist_img" />
         </div>
-        <div class="left_submenmu">
+        <div class="left_submenmu" v-if="menmu_status[index] === true">
           <ul>
             <li class="left_menmu" v-for="itemChild in item.subMenuList" :key="itemChild">
               <p class="menmulist_title">{{itemChild.permissionName}}</p>
@@ -345,7 +345,12 @@ export default {
   },
   created() {
     for (let index = 0; index < this.result.length; index++) {
-       this.menmu_status.push(0); 
+      this.menmu_status.push(false);
+    }
+  },
+  methods: {
+    clickmenmu(index) {
+        this.menmu_status.splice(index,1,!this.menmu_status[index]);
     }
   }
 };
