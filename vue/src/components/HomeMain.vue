@@ -1,55 +1,22 @@
 <template>
   <div class="main_contain">
+    <!-- 左边工具栏 -->
     <div class="main_left">
-      <ul>
-        <li class="left_menmu" v-for="item in result" :key="item">
-          <p class="menmulist_title">{{item.permissionName}}</p>
-        </li>
-      </ul>
-       <ul>
-        <li class="left_menmu" v-for="item in result" :key="item">
-          <p class="menmulist_title">{{item.permissionName}}</p>
-        </li>
-      </ul>
-       <ul>
-        <li class="left_menmu" v-for="item in result" :key="item">
-          <p class="menmulist_title">{{item.permissionName}}</p>
-        </li>
-      </ul>
-       <ul>
-        <li class="left_menmu" v-for="item in result" :key="item">
-          <p class="menmulist_title">{{item.permissionName}}</p>
-        </li>
-      </ul>
+      <div v-for="item in result" :key="item" class="left_menmu">
+        <p class="menmulist_title">{{item.permissionName}}</p>
+        <img src="../assets/arrow_down.png" alt class="menmulist_img" />
+        <!-- <div class="sss">
+          <ul>
+            <li class="left_menmu" v-for="itemChild in item.subMenuList" :key="itemChild">
+              <p class="menmulist_title">{{itemChild.permissionName}}</p>
+              <img src="../assets/arrow_down.png" alt class="menmulist_img" />
+            </li>
+          </ul>
+        </div>-->
+      </div>
     </div>
-
-    <div class="main_right">
-      <ul>
-        <li class="left_menmu" v-for="item in result" :key="item">
-          <p class="menmulist_title">{{item.permissionName}}</p>
-        </li>
-      </ul>
-      <ul>
-        <li class="left_menmu" v-for="item in result" :key="item">
-          <p class="menmulist_title">{{item.permissionName}}</p>
-        </li>
-      </ul>
-      <ul>
-        <li class="left_menmu" v-for="item in result" :key="item">
-          <p class="menmulist_title">{{item.permissionName}}</p>
-        </li>
-      </ul>
-      <ul>
-        <li class="left_menmu" v-for="item in result" :key="item">
-          <p class="menmulist_title">{{item.permissionName}}</p>
-        </li>
-      </ul>
-      <ul>
-        <li class="left_menmu" v-for="item in result" :key="item">
-          <p class="menmulist_title">{{item.permissionName}}</p>
-        </li>
-      </ul>
-    </div>
+    <!-- 右边内容区域 -->
+    <div class="main_right"></div>
   </div>
 </template>
 <script>
@@ -385,24 +352,39 @@ export default {
   justify-content: flex-start;
 }
 .main_left {
-  width: 15%;
-  height: 100%;
+  margin-top: 0px;
+  width: 200px;
+  height: calc(100vh - 74px);
   overflow: auto;
   background-color: #f7f8fa;
+  border-right: 1px solid #dadfe6;
 }
 .left_menmu {
   display: flex;
-  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
   height: 38px;
-  padding: 0px 40px 0px 20px;
+  padding: 0px 20px 0px 20px;
+  border-width: 0px;
+  cursor: pointer;
 }
 .menmulist_title {
   font-size: 14px;
+  line-height: 38px;
+  text-align: center;
+}
+.menmulist_img {
+  padding-top: 11.5px;
+  width: 15px;
+  height: 15px;
 }
 .main_right {
-  width: 85%;
+  width: calc(100vw - 200px);
   background-color: #ffffff;
-  height: 100%;
+  height: calc(100vh - 74px);
   overflow: auto;
+}
+.sss {
+  height: 0px;
 }
 </style>

@@ -3,7 +3,7 @@
     <div class="login_header">
       <div class="header_contain">
         <img
-          src="https://upload-images.jianshu.io/upload_images/1416859-7c9aeec44ea0578f.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/300/h/240/format/webp"
+          src="http://www.shopshops.com.cn/img/logo/top-icon.png"
           class="header_img"
         />
         <h3 class="header_title">Shopshops哪逛管理后台</h3>
@@ -54,7 +54,7 @@ export default {
 }
 .header_img {
   margin-top: 17px;
-  width: 10%;
+  width: 40px;
   height: 40px;
   margin-left: 10px;
   margin-right: 20px;
